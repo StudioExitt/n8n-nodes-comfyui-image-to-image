@@ -1,6 +1,6 @@
 {
   "name": "@ksc1234/n8n-nodes-comfyui-image-to-image",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
   "keywords": [
     "n8n-community-node-package",
@@ -45,7 +45,7 @@
     ],
     "nodes": [
       "dist/nodes/ComfyUI/ComfyuiImageToVideo.node.js",
-      "dist/nodes/ComfyUI/ComfyuiImageToImage.node.js"
+      "dist/nodes/ComfyUI/KscComfyuiImageToImage.node.js"
     ]
   },
   "devDependencies": {

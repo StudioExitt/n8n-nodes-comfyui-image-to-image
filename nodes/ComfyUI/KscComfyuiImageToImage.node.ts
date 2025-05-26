@@ -25,16 +25,16 @@ interface ImageInfo {
 	type: string;
 }
 
-export class ComfyuiImageToImage implements INodeType {
+export class KscComfyuiImageToImage implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'ComfyUI Image to Image',
-		name: 'comfyuiImageToImage',
+		displayName: 'KSC ComfyUI Image to Image',
+		name: 'kscComfyuiImageToImage',
 		icon: 'file:comfyui.svg',
 		group: ['transform'],
 		version: 1,
 		description: 'Convert images to images using ComfyUI workflow',
 		defaults: {
-			name: 'ComfyUI Image to Image',
+			name: 'KSC ComfyUI Image to Image',
 		},
 		credentials: [
 			{
