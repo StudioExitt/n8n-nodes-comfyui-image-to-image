@@ -1,6 +1,6 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-comfyui-image-to-image
+# n8n-nodes-ksc-comfyui
 
 This package provides n8n nodes to integrate with [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - A powerful and modular stable diffusion GUI with a graph/nodes interface.
 
@@ -26,7 +26,7 @@ This package provides n8n nodes to integrate with [ComfyUI](https://github.com/c
 
 ```bash
 # Install from npm package (recommended)
-npm install n8n-nodes-comfyui-image-to-image@1.0.3
+npm install n8n-nodes-ksc-comfyui@1.0.4
 
 # Or install from git repository
 npm install github:StudioExitt/n8n-nodes-comfyui-image-to-image
@@ -299,7 +299,7 @@ npm run lint
 
 ```bash
 # Install from npm package (recommended)
-npm install n8n-nodes-comfyui-image-to-image@1.0.3
+npm install n8n-nodes-ksc-comfyui@1.0.4
 
 # Or install from git repository
 npm install github:StudioExitt/n8n-nodes-comfyui-image-to-image

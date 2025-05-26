@@ -1,6 +1,6 @@
 {
-  "name": "n8n-nodes-comfyui-image-to-image",
-  "version": "1.0.3",
+  "name": "n8n-nodes-ksc-comfyui",
+  "version": "1.0.4",
   "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
   "keywords": [
     "n8n-community-node-package",
@@ -27,7 +27,6 @@
   "packageManager": "pnpm@9.1.4",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "format": "prettier nodes credentials --write",
