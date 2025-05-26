@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-comfyui-image-transformations",
+  "name": "n8n-nodes-comfyui-image-to-image",
   "version": "1.0.1",
   "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
   "keywords": [

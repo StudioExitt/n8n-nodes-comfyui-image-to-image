@@ -1,6 +1,6 @@
 ![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
 
-# n8n-nodes-comfyui-image-transformations
+# n8n-nodes-comfyui-image-to-image
 
 This package provides n8n nodes to integrate with [ComfyUI](https://github.com/comfyanonymous/ComfyUI) - A powerful and modular stable diffusion GUI with a graph/nodes interface.
 
@@ -270,7 +270,7 @@ npm run lint
 
 # 한국어 문서
 
-## n8n-nodes-comfyui-image-transformations
+## n8n-nodes-comfyui-image-to-image
 
 이 패키지는 [ComfyUI](https://github.com/comfyanonymous/ComfyUI)와 통합하는 n8n 노드를 제공합니다 - 그래프/노드 인터페이스가 있는 강력하고 모듈식 안정적인 확산 GUI입니다.
 
