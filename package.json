@@ -1,6 +1,6 @@
 {
-  "name": "@ksc1234/n8n-nodes-comfyui-image-to-image",
-  "version": "1.0.2",
+  "name": "n8n-nodes-comfyui-image-to-image",
+  "version": "1.0.3",
   "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
   "keywords": [
     "n8n-community-node-package",
