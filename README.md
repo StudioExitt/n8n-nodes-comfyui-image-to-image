@@ -26,7 +26,7 @@ This package provides n8n nodes to integrate with [ComfyUI](https://github.com/c
 
 ```bash
 # Install from git repository
-npm install github:사용자명/n8n-nodes-comfyui-image-transformations
+npm install github:StudioExitt/n8n-nodes-comfyui-image-transformations
 ```
 
 ### Docker Installation
@@ -39,7 +39,7 @@ For Docker installations, you can use one of the following methods:
 mkdir -p /path/to/custom/nodes
 
 # Clone the repository
-git clone https://github.com/사용자명/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
+git clone https://github.com/StudioExitt/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
 cd /tmp/custom-nodes
 
 # Install dependencies and build
@@ -64,7 +64,7 @@ FROM n8nio/n8n
 
 # Install the custom nodes package from GitHub
 RUN cd /tmp && \
-    npm install github:사용자명/n8n-nodes-comfyui-image-transformations && \
+    npm install github:StudioExitt/n8n-nodes-comfyui-image-transformations && \
     cp -r /tmp/node_modules/n8n-nodes-comfyui-image-transformations /home/node/.n8n/custom/nodes/ && \
     chown -R node:node /home/node/.n8n
 ```
@@ -100,7 +100,7 @@ volumes:
 Then:
 ```bash
 # Clone the repository
-git clone https://github.com/사용자명/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
+git clone https://github.com/StudioExitt/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
 cd /tmp/custom-nodes
 
 # Install dependencies and build
@@ -296,7 +296,7 @@ npm run lint
 
 ```bash
 # Git 저장소에서 설치
-npm install github:사용자명/n8n-nodes-comfyui-image-transformations
+npm install github:StudioExitt/n8n-nodes-comfyui-image-transformations
 ```
 
 ### 도커 설치
@@ -309,7 +309,7 @@ npm install github:사용자명/n8n-nodes-comfyui-image-transformations
 mkdir -p /path/to/custom/nodes
 
 # 저장소 복제
-git clone https://github.com/사용자명/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
+git clone https://github.com/StudioExitt/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
 cd /tmp/custom-nodes
 
 # 의존성 설치 및 빌드
@@ -334,7 +334,7 @@ FROM n8nio/n8n
 
 # GitHub에서 커스텀 노드 패키지 설치
 RUN cd /tmp && \
-    npm install github:사용자명/n8n-nodes-comfyui-image-transformations && \
+    npm install github:StudioExitt/n8n-nodes-comfyui-image-transformations && \
     cp -r /tmp/node_modules/n8n-nodes-comfyui-image-transformations /home/node/.n8n/custom/nodes/ && \
     chown -R node:node /home/node/.n8n
 ```
@@ -370,7 +370,7 @@ volumes:
 그리고:
 ```bash
 # 저장소 복제
-git clone https://github.com/사용자명/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
+git clone https://github.com/StudioExitt/n8n-nodes-comfyui-image-transformations.git /tmp/custom-nodes
 cd /tmp/custom-nodes
 
 # 의존성 설치 및 빌드
