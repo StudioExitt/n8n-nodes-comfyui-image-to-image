@@ -25,8 +25,8 @@ This package provides n8n nodes to integrate with [ComfyUI](https://github.com/c
 ### Standard Installation
 
 ```bash
-# Install from npm package
-npm install @ksc1234/n8n-nodes-comfyui-image-to-image
+# Install from npm package (recommended)
+npm install @ksc1234/n8n-nodes-comfyui-image-to-image@1.0.2
 
 # Or install from git repository
 npm install github:StudioExitt/n8n-nodes-comfyui-image-to-image
@@ -298,8 +298,8 @@ npm run lint
 ### 표준 설치
 
 ```bash
-# Install from npm package
-npm install @ksc1234/n8n-nodes-comfyui-image-to-image
+# Install from npm package (recommended)
+npm install @ksc1234/n8n-nodes-comfyui-image-to-image@1.0.2
 
 # Or install from git repository
 npm install github:StudioExitt/n8n-nodes-comfyui-image-to-image
