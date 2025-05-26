@@ -3,7 +3,6 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
-	NodeConnectionType,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 import FormData from 'form-data';
@@ -43,8 +42,8 @@ export class ComfyuiImageToImage implements INodeType {
 				required: true,
 			},
 		],
-		inputs: [{type: NodeConnectionType.Main}],
-		outputs: [{type: NodeConnectionType.Main}],
+		inputs: ['main'],
+		outputs: ['main'],
 		properties: [
 			{
 				displayName: 'Workflow JSON',
