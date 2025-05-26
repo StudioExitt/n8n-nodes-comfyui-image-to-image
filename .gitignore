@@ -1,0 +1,11 @@
+node_modules/
+dist/
+custom-nodes/
+.DS_Store
+.env
+*.log
+.tmp
+tmp
+npm-debug.log*
+yarn.lock
+.vscode/launch.json

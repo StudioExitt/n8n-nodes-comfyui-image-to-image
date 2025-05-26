@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ./custom-nodes:/home/node/.n8n/custom/nodes
+    environment:
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - GENERIC_TIMEZONE=Asia/Seoul
+
+  # ComfyUI 서비스를 추가하여 같은 환경에서 함께 실행 (선택 사항)
+  comfyui:
+    image: comfyanonymous/comfyui:latest
+    container_name: comfyui
+    ports:
+      - "8188:8188"
+    volumes:
+      - comfyui_data:/app
+    environment:
+      - PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:32
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+volumes:
+  n8n_data:
+  comfyui_data: 
