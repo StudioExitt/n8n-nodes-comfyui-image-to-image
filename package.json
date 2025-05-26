@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/StudioExitt/n8n-nodes-comfyui-image-transformations.git"
+    "url": "git+https://github.com/StudioExitt/n8n-nodes-comfyui-image-to-image.git"
   },
   "engines": {
     "node": ">=18.10",
