@@ -1,13 +1,12 @@
 {
-  "name": "n8n-nodes-ksc-comfyui",
-  "version": "1.0.4",
+  "name": "n8n-nodes-comfyui-image-to-image",
+  "version": "1.0.0",
   "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
   "keywords": [
     "n8n-community-node-package",
     "comfyui",
     "stable-diffusion",
     "image-to-image",
-    "image-to-video",
     "image-generation"
   ],
   "license": "MIT",
@@ -43,8 +42,7 @@
       "dist/credentials/ComfyUIApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ComfyUI/ComfyuiImageToVideo.node.js",
-      "dist/nodes/ComfyUI/KscComfyuiImageToImage.node.js"
+      "dist/nodes/ComfyUI/ComfyuiImageToImage.node.js"
     ]
   },
   "devDependencies": {

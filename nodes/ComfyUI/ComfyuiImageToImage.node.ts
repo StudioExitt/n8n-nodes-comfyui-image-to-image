@@ -25,16 +25,16 @@ interface ImageInfo {
 	type: string;
 }
 
-export class KscComfyuiImageToImage implements INodeType {
+export class ComfyuiImageToImage implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'KSC ComfyUI Image to Image',
-		name: 'kscComfyuiImageToImage',
+		displayName: 'ComfyUI Image to Image',
+		name: 'comfyuiImageToImage',
 		icon: 'file:comfyui.svg',
 		group: ['transform'],
 		version: 1,
-		description: 'Convert images to images using ComfyUI workflow',
+		description: 'Transform images using ComfyUI workflow',
 		defaults: {
-			name: 'KSC ComfyUI Image to Image',
+			name: 'ComfyUI Image to Image',
 		},
 		credentials: [
 			{
@@ -113,7 +113,7 @@ export class KscComfyuiImageToImage implements INodeType {
 		const apiUrl = credentials.apiUrl as string;
 		const apiKey = credentials.apiKey as string;
 
-		console.log('[ComfyUI] Executing image to image conversion with API URL:', apiUrl);
+		console.log('[ComfyUI] Executing image transformation with API URL:', apiUrl);
 
 		const headers: Record<string, string> = {
 			'Content-Type': 'application/json',
