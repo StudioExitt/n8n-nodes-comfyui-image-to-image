@@ -1,0 +1,206 @@
+{
+  "load_image_1": {
+    "inputs": {
+      "image": "first_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load First Image"
+    }
+  },
+  "load_image_2": {
+    "inputs": {
+      "image": "second_input.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Second Image"
+    }
+  },
+  "checkpoint_loader": {
+    "inputs": {
+      "ckpt_name": "dreamshaper_8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "vae_loader": {
+    "inputs": {
+      "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "positive_prompt": {
+    "inputs": {
+      "text": "beautiful morphing transition between two images, smooth movement, high quality, cinematic",
+      "clip": [
+        "checkpoint_loader",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Positive Prompt"
+    }
+  },
+  "negative_prompt": {
+    "inputs": {
+      "text": "blurry, low quality, distorted, artifacts, ugly, bad transition",
+      "clip": [
+        "checkpoint_loader",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Negative Prompt"
+    }
+  },
+  "animatediff_loader": {
+    "inputs": {
+      "model_name": "mm_sd_v15_v2.ckpt"
+    },
+    "class_type": "AnimateDiffLoader",
+    "_meta": {
+      "title": "AnimateDiff Loader"
+    }
+  },
+  "animatediff_model": {
+    "inputs": {
+      "model": [
+        "checkpoint_loader",
+        0
+      ],
+      "motion_module": [
+        "animatediff_loader",
+        0
+      ]
+    },
+    "class_type": "AnimateDiffCombine",
+    "_meta": {
+      "title": "AnimateDiff Model"
+    }
+  },
+  "first_image_encode": {
+    "inputs": {
+      "pixels": [
+        "load_image_1",
+        0
+      ],
+      "vae": [
+        "vae_loader",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "Encode First Image"
+    }
+  },
+  "second_image_encode": {
+    "inputs": {
+      "pixels": [
+        "load_image_2",
+        0
+      ],
+      "vae": [
+        "vae_loader",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "Encode Second Image"
+    }
+  },
+  "latent_interpolate": {
+    "inputs": {
+      "latent1": [
+        "first_image_encode",
+        0
+      ],
+      "latent2": [
+        "second_image_encode",
+        0
+      ],
+      "frames": 16,
+      "interpolation": "linear"
+    },
+    "class_type": "LatentInterpolate",
+    "_meta": {
+      "title": "Latent Interpolation"
+    }
+  },
+  "animatediff_sampler": {
+    "inputs": {
+      "model": [
+        "animatediff_model",
+        0
+      ],
+      "positive": [
+        "positive_prompt",
+        0
+      ],
+      "negative": [
+        "negative_prompt",
+        0
+      ],
+      "latent_image": [
+        "latent_interpolate",
+        0
+      ],
+      "seed": 12345,
+      "steps": 20,
+      "cfg": 7.5,
+      "sampler_name": "euler_ancestral",
+      "scheduler": "normal",
+      "frame_count": 16,
+      "fps": 8,
+      "denoise": 0.75
+    },
+    "class_type": "AnimateDiffSampler",
+    "_meta": {
+      "title": "AnimateDiff Sampler"
+    }
+  },
+  "vae_decode": {
+    "inputs": {
+      "samples": [
+        "animatediff_sampler",
+        0
+      ],
+      "vae": [
+        "vae_loader",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "video_combine": {
+    "inputs": {
+      "images": [
+        "vae_decode",
+        0
+      ],
+      "frame_rate": 8,
+      "loop_count": 0,
+      "filename_prefix": "interpolated_video",
+      "format": "video/mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Video Combine"
+    }
+  }
+} 

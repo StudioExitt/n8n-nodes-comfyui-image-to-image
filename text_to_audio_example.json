@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "instanceId": "text-to-audio-example"
+  },
+  "nodes": [
+    {
+      "parameters": {
+        "workflow": "{\n  \"14\": {\n    \"inputs\": {\n      \"tags\": \"Contemporary rock instrumental with powerful electric guitar power chords, dynamic drumming, driving bass, soaring lead guitar solos, arena rock energy, 135 BPM, stadium-worthy hooks, freedom and adventure spirit, no vocals, pure instrumental\",\n      \"lyrics\": \"\",\n      \"lyrics_strength\": 0.99,\n      \"clip\": [\n        \"40\",\n        1\n      ]\n    },\n    \"class_type\": \"TextEncodeAceStepAudio\",\n    \"_meta\": {\n      \"title\": \"TextEncodeAceStepAudio\"\n    }\n  },\n  \"17\": {\n    \"inputs\": {\n      \"seconds\": 180,\n      \"batch_size\": 1\n    },\n    \"class_type\": \"EmptyAceStepLatentAudio\",\n    \"_meta\": {\n      \"title\": \"EmptyAceStepLatentAudio\"\n    }\n  },\n  \"18\": {\n    \"inputs\": {\n      \"samples\": [\n        \"52\",\n        0\n      ],\n      \"vae\": [\n        \"40\",\n        2\n      ]\n    },\n    \"class_type\": \"VAEDecodeAudio\",\n    \"_meta\": {\n      \"title\": \"오디오 VAE 디코드\"\n    }\n  },\n  \"40\": {\n    \"inputs\": {\n      \"ckpt_name\": \"ace_step_v1_3.5b.safetensors\"\n    },\n    \"class_type\": \"CheckpointLoaderSimple\",\n    \"_meta\": {\n      \"title\": \"체크포인트 로드\"\n    }\n  },\n  \"44\": {\n    \"inputs\": {\n      \"conditioning\": [\n        \"14\",\n        0\n      ]\n    },\n    \"class_type\": \"ConditioningZeroOut\",\n    \"_meta\": {\n      \"title\": \"조건 (0으로 출력)\"\n    }\n  },\n  \"49\": {\n    \"inputs\": {\n      \"model\": [\n        \"51\",\n        0\n      ],\n      \"operation\": [\n        \"50\",\n        0\n      ]\n    },\n    \"class_type\": \"LatentApplyOperationCFG\",\n    \"_meta\": {\n      \"title\": \"잠재 데이터 CFG 연산 (연산 적용)\"\n    }\n  },\n  \"50\": {\n    \"inputs\": {\n      \"multiplier\": 1.0\n    },\n    \"class_type\": \"LatentOperationTonemapReinhard\",\n    \"_meta\": {\n      \"title\": \"잠재 데이터 연산 (톤맵 레인하르트)\"\n    }\n  },\n  \"51\": {\n    \"inputs\": {\n      \"shift\": 5.0,\n      \"model\": [\n        \"40\",\n        0\n      ]\n    },\n    \"class_type\": \"ModelSamplingSD3\",\n    \"_meta\": {\n      \"title\": \"모델 샘플링 (SD3)\"\n    }\n  },\n  \"52\": {\n    \"inputs\": {\n      \"seed\": 763036669622641,\n      \"steps\": 50,\n      \"cfg\": 5,\n      \"sampler_name\": \"euler\",\n      \"scheduler\": \"simple\",\n      \"denoise\": 1,\n      \"model\": [\n        \"49\",\n        0\n      ],\n      \"positive\": [\n        \"14\",\n        0\n      ],\n      \"negative\": [\n        \"44\",\n        0\n      ],\n      \"latent_image\": [\n        \"17\",\n        0\n      ]\n    },\n    \"class_type\": \"KSampler\",\n    \"_meta\": {\n      \"title\": \"KSampler\"\n    }\n  },\n  \"59\": {\n    \"inputs\": {\n      \"filename_prefix\": \"audio/ComfyUI\",\n      \"quality\": \"128k\",\n      \"audioUI\": \"\",\n      \"audio\": [\n        \"18\",\n        0\n      ]\n    },\n    \"class_type\": \"SaveAudioMP3\",\n    \"_meta\": {\n      \"title\": \"Save Audio (MP3)\"\n    }\n  }\n}",
+        "textPrompt": "Relaxing jazz piano with smooth saxophone melody, soft drums, ambient background, 120 BPM, cozy coffee shop atmosphere",
+        "audioDuration": 60,
+        "audioQuality": "128k",
+        "seed": -1,
+        "steps": 50,
+        "cfg": 5,
+        "timeout": 30
+      },
+      "id": "6dffd803-8b9b-4b7e-8d3c-8b9b8d3c8b9b",
+      "name": "ComfyUI Audio Generator",
+      "type": "comfyuiAudioGenerator",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ],
+      "credentials": {
+        "comfyUIApi": {
+          "id": "your-comfyui-credentials-id",
+          "name": "ComfyUI API"
+        }
+      }
+    }
+  ],
+  "connections": {},
+  "createdAt": "2024-01-01T12:00:00.000Z",
+  "updatedAt": "2024-01-01T12:00:00.000Z",
+  "settings": {},
+  "staticData": null,
+  "tags": []
+} 

@@ -1,13 +1,22 @@
 {
   "name": "n8n-nodes-comfyui-image-to-image",
-  "version": "1.0.1",
-  "description": "n8n node to integrate with ComfyUI stable diffusion workflows for image transformations",
+  "version": "2.2.0",
+  "description": "n8n nodes to integrate with ComfyUI for image transformations, dual image processing, video generation, and audio generation using stable diffusion workflows",
   "keywords": [
     "n8n-community-node-package",
     "comfyui",
     "stable-diffusion",
     "image-to-image",
-    "image-generation"
+    "dual-image-processing",
+    "image-blending",
+    "image-generation",
+    "video-generation",
+    "audio-generation",
+    "text-to-audio",
+    "animatediff",
+    "image-transformer",
+    "video-generator",
+    "audio-generator"
   ],
   "license": "MIT",
   "homepage": "",
@@ -42,7 +51,10 @@
       "dist/credentials/ComfyUIApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/ComfyUI/ComfyuiImageToImage.node.js"
+      "dist/nodes/ComfyUI/ComfyuiImageToImage.node.js",
+      "dist/nodes/ComfyUI/ComfyuiDualImageToImage.node.js",
+      "dist/nodes/ComfyUI/ComfyuiImageToVideo.node.js",
+      "dist/nodes/ComfyUI/ComfyuiAudioGenerator.node.js"
     ]
   },
   "devDependencies": {
@@ -60,6 +72,7 @@
     "n8n-workflow": "*"
   },
   "dependencies": {
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "n8n-nodes-comfyui-image-to-image": "file:n8n-nodes-comfyui-image-to-image-2.2.0.tgz"
   }
 }

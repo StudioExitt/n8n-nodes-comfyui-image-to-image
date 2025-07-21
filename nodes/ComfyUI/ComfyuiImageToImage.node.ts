@@ -3,6 +3,7 @@ import {
 	INodeExecutionData,
 	INodeType,
 	INodeTypeDescription,
+	NodeConnectionType,
 } from 'n8n-workflow';
 import { NodeApiError } from 'n8n-workflow';
 import FormData from 'form-data';
@@ -27,14 +28,14 @@ interface ImageInfo {
 
 export class ComfyuiImageToImage implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'ComfyUI Image to Image',
+		displayName: 'ComfyUI Image Transformer',
 		name: 'comfyuiImageToImage',
 		icon: 'file:comfyui.svg',
 		group: ['transform'],
 		version: 1,
-		description: 'Transform images using ComfyUI workflow',
+		description: '🖼️ Transform and enhance images using ComfyUI workflows (img2img, inpainting, style transfer)',
 		defaults: {
-			name: 'ComfyUI Image to Image',
+			name: 'ComfyUI Image Transformer',
 		},
 		credentials: [
 			{
